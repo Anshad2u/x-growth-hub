@@ -205,6 +205,9 @@ Run `bun run cleanup --help` for all options (with npm, pass flags after `--`: `
 **Is it production ready?**
 Yes. Every feature is a complete, working implementation: authentication, CRUD flows, table search/filter/sort/pagination, and form validation with mutations all function end-to-end. It's a starting point for real applications, not a visual mockup.
 
+**How is this different from other dashboard templates?**
+Most dashboard templates are static demo boilerplates: screens that look finished but need rebuilding once you wire in real data. Here the tables, forms, auth, organizations, and billing all work end-to-end, the implementations follow official TanStack and Next.js patterns, and a cleanup script keeps the base minimal so you tweak it to your use case instead of deleting code.
+
 **Is it free for commercial use?**
 Yes. MIT-licensed and free for both personal and commercial projects: no paid tier, no license keys.
 
@@ -222,6 +225,12 @@ Yes. Bun is preferred, but npm works too, and the repo even ships both Node.js a
 
 **Does it work with AI coding assistants?**
 Yes. The repo ships AGENTS.md and CLAUDE.md with the project's conventions, plus a bundled Claude Code skill (`.claude/skills/kiranism-shadcn-dashboard`) that teaches agents how to add pages, tables, forms, and navigation the template way. Works with Claude Code, Cursor, and any tool that reads AGENTS.md.
+
+**What data fetching pattern does it use?**
+TanStack React Query with the official SSR pattern: `prefetchQuery` on the server, `HydrationBoundary` with `dehydrate` for hydration, and `useSuspenseQuery` on the client, plus nuqs for URL-synced search-param state. Mutations invalidate the cache on success.
+
+**How do I deploy it?**
+Deploy to Vercel out of the box, or use the included Docker setups: a Node.js Dockerfile and a Bun Dockerfile, both using Next.js standalone output mode. See [Deploy](#deploy) below.
 
 ## Deploy
 
