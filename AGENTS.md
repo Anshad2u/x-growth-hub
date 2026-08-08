@@ -547,6 +547,8 @@ Recommended test locations:
 
 ## Deployment
 
+Canonical guide: [docs/deployment.md](./docs/deployment.md) (Vercel, production environment variables, Docker).
+
 ### Vercel (Recommended)
 
 1. Connect repository to Vercel

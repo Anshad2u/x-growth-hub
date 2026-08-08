@@ -46,9 +46,7 @@ const DOC_RULES = {
         '── billing',
         '── profile',
         '── exclusive',
-        '── auth',
-        'NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=',
-        'CLERK_SECRET_KEY='
+        '── auth'
       ],
       blocks: [
         { start: '##### Clerk setup', end: 'docs/clerk_setup.md).' },
@@ -95,6 +93,7 @@ const DOC_RULES = {
     },
     { file: 'Dockerfile', lines: ['ARG NEXT_PUBLIC_CLERK'] },
     { file: 'Dockerfile.bun', lines: ['ARG NEXT_PUBLIC_CLERK'] },
+    { file: 'docs/deployment.md', lines: ['NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY', 'CLERK_SECRET_KEY'] },
     { file: 'src/app/about/page.tsx', jsxSections: ['Authentication by Clerk'] },
     { file: 'src/app/privacy-policy/page.tsx', jsxSections: ['Authentication by Clerk'] }
   ],
@@ -117,7 +116,8 @@ const DOC_RULES = {
     },
     { file: 'env.example.txt', envSections: ['Error Tracking Configuration (Sentry)'] },
     { file: 'Dockerfile', lines: ['ARG NEXT_PUBLIC_SENTRY'] },
-    { file: 'Dockerfile.bun', lines: ['ARG NEXT_PUBLIC_SENTRY'] }
+    { file: 'Dockerfile.bun', lines: ['ARG NEXT_PUBLIC_SENTRY'] },
+    { file: 'docs/deployment.md', lines: ['- `SENTRY_*` variables', 'Sentry source maps'] }
   ],
   kanban: [
     { file: 'README.md', lines: ['| [Kanban Board](', '── kanban'] },
