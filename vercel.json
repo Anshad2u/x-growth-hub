@@ -1,12 +1,4 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "vercel-next",
-      "config": {
-        "include": ["next.config.mjs"]
-      }
-    }
-  ]
+  "cleanOutputs": true
 }
