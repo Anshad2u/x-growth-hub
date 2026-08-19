@@ -1,0 +1,50 @@
+import { Home, BarChart3, Users, Target, Search } from 'lucide-react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { cn } from '@/lib/utils';
+
+const navItems = [
+  { title: 'Home', href: '/', icon: Home },
+  { title: 'Analyze', href: '/analyze', icon: Search },
+  { title: 'Compare', href: '/compare', icon: Users },
+  { title: 'My Account', href: '/my-account', icon: Target },
+  { title: 'Dashboard', href: '/dashboard/overview', icon: BarChart3 },
+];
+
+export default function XGrowthHubLayout({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+
+  return (
+    <div className="min-h-screen bg-background">
+      {/* Top nav */}
+      <header className="border-b bg-background/95 backdrop-blur">
+        <div className="container mx-auto flex h-14 items-center justify-between">
+          <Link href="/" className="font-bold text-xl">
+            X Growth Hub
+          </Link>
+          <nav className="flex items-center space-x-2">
+            {navItems.map((item) => {
+              const Icon = item.icon;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={cn(
+                    "flex items-center gap-2 rounded-md px-3 py-1.5 text-sm font-medium transition-colors",
+                    pathname === item.href
+                      ? "bg-muted text-foreground"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                  )}
+                >
+                  <Icon className="h-4 w-4" />
+                  {item.title}
+                </Link>
+              );
+            })}
+          </nav>
+        </div>
+      </header>
+      {children}
+    </div>
+  );
+}
