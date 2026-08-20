@@ -7,28 +7,28 @@ export const navGroups: NavGroup[] = [
       {
         title: 'Home',
         url: '/',
-        icon: 'dashboard',
+        icon: 'logo',
         isActive: false,
         items: []
       },
       {
         title: 'Analyze Profile',
         url: '/analyze',
-        icon: 'users',
+        icon: 'search',
         isActive: false,
         items: []
       },
       {
         title: 'Compare Accounts',
         url: '/compare',
-        icon: 'barChart',
+        icon: 'teams',
         isActive: false,
         items: []
       },
       {
         title: 'My Account Audit',
         url: '/my-account',
-        icon: 'chart',
+        icon: 'user',
         isActive: false,
         items: []
       },
