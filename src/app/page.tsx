@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { motion } from 'motion/react';
-import { ArrowRight, ChartBar, Users, Search, Target } from '@tabler/icons-react';
+import { IconArrowRight, IconChartBar, IconUsers, IconSearch, IconTarget, IconTrendingUp } from '@tabler/icons-react';
 
 export default function Home() {
   return (
@@ -36,25 +36,25 @@ export default function Home() {
         >
           <Link href="/analyze">
             <Button size="lg" className="w-full h-24 flex-col gap-2">
-              <Search className="w-6 h-6" />
+              <IconSearch className="w-6 h-6" />
               Analyze Profile
             </Button>
           </Link>
           <Link href="/analyze">
             <Button size="lg" variant="outline" className="w-full h-24 flex-col gap-2">
-              <ChartBar className="w-6 h-6" />
+              <IconChartBar className="w-6 h-6" />
               Score Tweets
             </Button>
           </Link>
           <Link href="/compare">
             <Button size="lg" variant="outline" className="w-full h-24 flex-col gap-2">
-              <Users className="w-6 h-6" />
+              <IconUsers className="w-6 h-6" />
               Compare Accounts
             </Button>
           </Link>
           <Link href="/my-account">
             <Button size="lg" variant="outline" className="w-full h-24 flex-col gap-2">
-              <Target className="w-6 h-6" />
+              <IconTarget className="w-6 h-6" />
               My Account Audit
             </Button>
           </Link>
@@ -68,7 +68,7 @@ export default function Home() {
             transition={{ delay: 0.3 }}
             className="p-6 bg-card rounded-lg border"
           >
-            <ChartBar className="w-8 h-8 mb-4 text-primary" />
+            <IconChartBar className="w-8 h-8 mb-4 text-primary" />
             <h3 className="text-xl font-semibold mb-2">Tweet Engagement Scoring</h3>
             <p className="text-muted-foreground">
               Score = (Replies×20) + (Reposts×2) + (Likes×0.5) + (Bookmarks×80).
@@ -81,7 +81,7 @@ export default function Home() {
             transition={{ delay: 0.4 }}
             className="p-6 bg-card rounded-lg border"
           >
-            <Search className="w-8 h-8 mb-4 text-primary" />
+            <IconSearch className="w-8 h-8 mb-4 text-primary" />
             <h3 className="text-xl font-semibold mb-2">Competitor Analysis</h3>
             <p className="text-muted-foreground">
               Analyze any X profile — see their best performing tweets, content patterns,
@@ -94,7 +94,7 @@ export default function Home() {
             transition={{ delay: 0.5 }}
             className="p-6 bg-card rounded-lg border"
           >
-            <ChartBar className="w-8 h-8 mb-4 text-primary" />
+            <IconTrendingUp className="w-8 h-8 mb-4 text-primary" />
             <h3 className="text-xl font-semibold mb-2">Pattern Recognition</h3>
             <p className="text-muted-foreground">
               Identify which tweet types (questions, announcements, threads) perform
@@ -112,7 +112,7 @@ export default function Home() {
         >
           <Link href="/analyze">
             <Button size="lg" className="gap-2">
-              Start Analyzing <ArrowRight className="w-4 h-4" />
+              Start Analyzing <IconArrowRight className="w-4 h-4" />
             </Button>
           </Link>
         </motion.div>

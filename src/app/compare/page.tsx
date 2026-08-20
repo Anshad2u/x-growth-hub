@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { Loader2, Users } from '@tabler/icons-react';
+import { IconLoader, IconUsers } from '@tabler/icons-react';
 import { analyzeProfile, AnalysisResult } from '@/lib/api';
 import {
   ResponsiveContainer,
@@ -104,7 +104,7 @@ export default function ComparePage() {
             <Button onClick={handleCompare} disabled={loading}>
               {loading ? (
                 <>
-                  <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                  <IconLoader className="w-4 h-4 mr-2 animate-spin" />
                   Analyzing...
                 </>
               ) : 'Compare'}

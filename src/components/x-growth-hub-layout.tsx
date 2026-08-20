@@ -1,15 +1,15 @@
 'use client';
-import { HomeIcon, ChartBar, Users, Target, Search } from '@tabler/icons-react';
+import { IconHome, IconChartBar, IconUsers, IconTarget, IconSearch } from '@tabler/icons-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 
 const navItems = [
-  { title: 'Home', href: '/', icon: HomeIcon },
-  { title: 'Analyze', href: '/analyze', icon: Search },
-  { title: 'Compare', href: '/compare', icon: Users },
-  { title: 'My Account', href: '/my-account', icon: Target },
-  { title: 'Dashboard', href: '/dashboard/overview', icon: ChartBar },
+  { title: 'Home', href: '/', icon: IconHome },
+  { title: 'Analyze', href: '/analyze', icon: IconSearch },
+  { title: 'Compare', href: '/compare', icon: IconUsers },
+  { title: 'My Account', href: '/my-account', icon: IconTarget },
+  { title: 'Dashboard', href: '/dashboard/overview', icon: IconChartBar },
 ];
 
 export default function XGrowthHubLayout({ children }: { children: React.ReactNode }) {

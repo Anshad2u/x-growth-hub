@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { Loader2, Search, TrendingUp, ChartBar } from '@tabler/icons-react';
+import { IconLoader, IconSearch, IconTrendingUp, IconChartBar } from '@tabler/icons-react';
 import { analyzeProfile, AnalysisResult } from '@/lib/api';
 import Link from 'next/link';
 
@@ -53,12 +53,12 @@ export default function AnalyzePage() {
         <Button onClick={handleAnalyze} disabled={loading || !username.trim()}>
           {loading ? (
             <>
-              <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+              <IconLoader className="w-4 h-4 mr-2 animate-spin" />
               Analyzing...
             </>
           ) : (
             <>
-              <Search className="w-4 h-4 mr-2" />
+              <IconSearch className="w-4 h-4 mr-2" />
               Analyze
             </>
           )}
