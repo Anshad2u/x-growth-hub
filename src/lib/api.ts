@@ -33,10 +33,8 @@ export interface Tweet {
 export interface AnalysisResult {
   username: string;
   total_tweets: number;
-  generated_at: string;
   formula: string;
-  top_25_tweets: Tweet[];
-  all_tweets: Tweet[];
+  tweets: Tweet[];
 }
 
 const API_BASE = process.env.NEXT_PUBLIC_API_BASE || 'http://localhost:5000';
@@ -48,7 +46,7 @@ export async function analyzeProfile(
   const resp = await fetch(`${API_BASE}/api/analyze-tweets/${username}`, {
     method: 'GET',
     headers: { 'Content-Type': 'application/json' },
-    next: { revalidate: 60 }
+    next: { revalidate: 0 }
   });
 
   if (!resp.ok) {
@@ -56,5 +54,13 @@ export async function analyzeProfile(
     throw new Error(`API error ${resp.status}: ${errorText}`);
   }
 
-  return resp.json();
+  const data = await resp.json();
+
+  // Map the backend response to our frontend interface
+  return {
+    username: data.username || username,
+    total_tweets: data.total_tweets || 0,
+    formula: data.formula || 'Score = (Replies * 20) + (Reposts * 2) + (Likes * 0.5) + (Bookmarks * 80)',
+    tweets: data.tweets || []
+  };
 }

@@ -60,13 +60,13 @@ export default function ComparePage() {
   const comparisonData = Object.entries(results).map(([username, result]) => ({
     username: `@${username}`,
     tweets: result.total_tweets,
-    avgScore: Math.round(result.all_tweets.reduce((sum, t) => sum + t.score.engagement_score, 0) / result.all_tweets.length),
-    totalLikes: result.all_tweets.reduce((sum, t) => sum + t.raw_metrics.likes, 0),
-    totalReplies: result.all_tweets.reduce((sum, t) => sum + t.raw_metrics.replies, 0),
-    totalViews: result.all_tweets.reduce((sum, t) => sum + t.raw_metrics.views, 0),
-    engagementRate: result.all_tweets.length > 0
-      ? (result.all_tweets.reduce((sum, t) => sum + t.score.engagement_score, 0) /
-         result.all_tweets.reduce((sum, t) => sum + t.raw_metrics.views, 0) * 100).toFixed(1)
+    avgScore: Math.round(result.tweets.reduce((sum, t) => sum + t.score.engagement_score, 0) / result.tweets.length),
+    totalLikes: result.tweets.reduce((sum, t) => sum + t.raw_metrics.likes, 0),
+    totalReplies: result.tweets.reduce((sum, t) => sum + t.raw_metrics.replies, 0),
+    totalViews: result.tweets.reduce((sum, t) => sum + t.raw_metrics.views, 0),
+    engagementRate: result.tweets.length > 0
+      ? (result.tweets.reduce((sum, t) => sum + t.score.engagement_score, 0) /
+         result.tweets.reduce((sum, t) => sum + t.raw_metrics.views, 0) * 100).toFixed(1)
       : '0'
   }));
 

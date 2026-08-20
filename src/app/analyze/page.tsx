@@ -109,7 +109,7 @@ export default function AnalyzePage() {
             <Card>
               <CardHeader>
                 <CardTitle className="text-3xl font-bold text-primary">
-                  {Math.round(result.all_tweets.reduce((sum, t) => sum + t.score.engagement_score, 0))}
+                  {Math.round(result.tweets.reduce((sum, t) => sum + t.score.engagement_score, 0))}
                 </CardTitle>
                 <p className="text-sm text-muted-foreground">Total engagement score</p>
               </CardHeader>
@@ -117,8 +117,8 @@ export default function AnalyzePage() {
             <Card>
               <CardHeader>
                 <CardTitle className="text-3xl font-bold text-green-500">
-                  {result.all_tweets.length > 0
-                    ? Math.round(result.all_tweets[0].score.engagement_score)
+                  {result.tweets.length > 0
+                    ? Math.round(result.tweets[0].score.engagement_score)
                     : 0}
                 </CardTitle>
                 <p className="text-sm text-muted-foreground">Top tweet score</p>
@@ -146,7 +146,7 @@ export default function AnalyzePage() {
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {result.all_tweets.slice(0, 25).map((tweet, i) => (
+                  {result.tweets.slice(0, 25).map((tweet, i) => (
                     <TableRow key={tweet.tweet_id}>
                       <TableCell className="font-mono">{i + 1}</TableCell>
                       <TableCell className="max-w-md">

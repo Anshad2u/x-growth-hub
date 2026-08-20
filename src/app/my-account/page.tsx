@@ -52,7 +52,7 @@ export default function MyAccountPage() {
   let worst_engaging: { text: string; score: number; type: string } | null = null;
 
   if (result) {
-    for (const tweet of result.all_tweets) {
+    for (const tweet of result.tweets) {
       const score = tweet.score.engagement_score;
       total_views += tweet.raw_metrics.views;
       total_engagement += score;
@@ -121,7 +121,7 @@ export default function MyAccountPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="text-3xl font-bold text-green-500">
-                  {Math.round(total_engagement / result.all_tweets.length)}
+                  {Math.round(total_engagement / result.tweets.length)}
                 </CardTitle>
                 <p className="text-sm text-muted-foreground">Avg score</p>
               </CardHeader>
