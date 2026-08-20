@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { motion } from 'framer-motion';
-import { ArrowRight, BarChart3, Users, Search, Target, TrendingUp } from 'lucide-react';
+import { motion } from 'motion/react';
+import { ArrowRight, ChartBar, Users, Search, Target } from '@tabler/icons-react';
 
 export default function Home() {
   return (
@@ -42,7 +42,7 @@ export default function Home() {
           </Link>
           <Link href="/analyze">
             <Button size="lg" variant="outline" className="w-full h-24 flex-col gap-2">
-              <BarChart3 className="w-6 h-6" />
+              <ChartBar className="w-6 h-6" />
               Score Tweets
             </Button>
           </Link>
@@ -68,7 +68,7 @@ export default function Home() {
             transition={{ delay: 0.3 }}
             className="p-6 bg-card rounded-lg border"
           >
-            <TrendingUp className="w-8 h-8 mb-4 text-primary" />
+            <ChartBar className="w-8 h-8 mb-4 text-primary" />
             <h3 className="text-xl font-semibold mb-2">Tweet Engagement Scoring</h3>
             <p className="text-muted-foreground">
               Score = (Replies×20) + (Reposts×2) + (Likes×0.5) + (Bookmarks×80).
@@ -94,7 +94,7 @@ export default function Home() {
             transition={{ delay: 0.5 }}
             className="p-6 bg-card rounded-lg border"
           >
-            <BarChart3 className="w-8 h-8 mb-4 text-primary" />
+            <ChartBar className="w-8 h-8 mb-4 text-primary" />
             <h3 className="text-xl font-semibold mb-2">Pattern Recognition</h3>
             <p className="text-muted-foreground">
               Identify which tweet types (questions, announcements, threads) perform

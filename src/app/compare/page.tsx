@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { Loader2, Users } from 'lucide-react';
+import { Loader2, Users } from '@tabler/icons-react';
 import { analyzeProfile, AnalysisResult } from '@/lib/api';
 import {
   ResponsiveContainer,

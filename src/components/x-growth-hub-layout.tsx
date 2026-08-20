@@ -1,14 +1,15 @@
-import { Home, BarChart3, Users, Target, Search } from 'lucide-react';
+'use client';
+import { HomeIcon, ChartBar, Users, Target, Search } from '@tabler/icons-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 
 const navItems = [
-  { title: 'Home', href: '/', icon: Home },
+  { title: 'Home', href: '/', icon: HomeIcon },
   { title: 'Analyze', href: '/analyze', icon: Search },
   { title: 'Compare', href: '/compare', icon: Users },
   { title: 'My Account', href: '/my-account', icon: Target },
-  { title: 'Dashboard', href: '/dashboard/overview', icon: BarChart3 },
+  { title: 'Dashboard', href: '/dashboard/overview', icon: ChartBar },
 ];
 
 export default function XGrowthHubLayout({ children }: { children: React.ReactNode }) {
@@ -16,7 +17,6 @@ export default function XGrowthHubLayout({ children }: { children: React.ReactNo
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Top nav */}
       <header className="border-b bg-background/95 backdrop-blur">
         <div className="container mx-auto flex h-14 items-center justify-between">
           <Link href="/" className="font-bold text-xl">

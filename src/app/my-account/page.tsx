@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Loader2, Target, CheckCircle, XCircle } from 'lucide-react';
+import { Loader2, Target, CheckCircle, XCircle } from '@tabler/icons-react';
 import { analyzeProfile, AnalysisResult } from '@/lib/api';
 
 export default function MyAccountPage() {
