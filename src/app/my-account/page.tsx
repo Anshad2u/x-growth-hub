@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { IconLoader, IconTarget, IconCheckCircle, IconXCircle } from '@tabler/icons-react';
+import { IconLoader, IconTarget, IconCircleCheck, IconCircleX } from '@tabler/icons-react';
 import { analyzeProfile, AnalysisResult } from '@/lib/api';
 
 export default function MyAccountPage() {
@@ -170,7 +170,7 @@ export default function MyAccountPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <IconCheckCircle className="w-5 h-5 text-green-500" />
+                  <IconCircleCheck className="w-5 h-5 text-green-500" />
                   Best Performing Tweet
                 </CardTitle>
               </CardHeader>
@@ -188,7 +188,7 @@ export default function MyAccountPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <IconXCircle className="w-5 h-5 text-red-500" />
+                  <IconCircleX className="w-5 h-5 text-red-500" />
                   Worst Performing Tweet
                 </CardTitle>
               </CardHeader>
@@ -215,7 +215,7 @@ export default function MyAccountPage() {
             <CardContent>
               <ul className="space-y-3">
                 <li className="flex items-start gap-2">
-                  <IconCheckCircle className="w-4 h-4 mt-0.5 text-green-500" />
+                  <IconCircleCheck className="w-4 h-4 mt-0.5 text-green-500" />
                   <span>
                     Your <strong>{best_engaging?.type}</strong> tweets perform best — create more content in this style.
                   </span>
