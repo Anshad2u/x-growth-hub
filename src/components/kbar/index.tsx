@@ -12,17 +12,14 @@ export default function KBar({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const filteredGroups = useFilteredNavGroups(navGroups);
 
-  // These action are for the navigation
   const actions = useMemo(() => {
-    // Define navigateTo inside the useMemo callback to avoid dependency array issues
     const navigateTo = (url: string) => {
       router.push(url);
     };
 
-    const allItems = filteredGroups.flatMap((group) => group.items);
+    const allItems: any[] = filteredGroups.flatMap((group: any) => group.items);
 
-    return allItems.flatMap((navItem) => {
-      // Only include base action if the navItem has a real URL and is not just a container
+    return allItems.flatMap((navItem: any) => {
       const baseAction =
         navItem.url !== '#'
           ? {
@@ -36,9 +33,8 @@ export default function KBar({ children }: { children: React.ReactNode }) {
             }
           : null;
 
-      // Map child items into actions
       const childActions =
-        navItem.items?.map((childItem) => ({
+        navItem.items?.map((childItem: any) => ({
           id: `${childItem.title.toLowerCase()}Action`,
           name: childItem.title,
           shortcut: childItem.shortcut,
@@ -48,7 +44,6 @@ export default function KBar({ children }: { children: React.ReactNode }) {
           perform: () => navigateTo(childItem.url)
         })) ?? [];
 
-      // Return only valid actions (ignoring null base actions for containers)
       return baseAction ? [baseAction, ...childActions] : childActions;
     });
   }, [router, filteredGroups]);

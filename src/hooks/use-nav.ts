@@ -4,6 +4,11 @@ import { useMemo } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { navGroups } from '@/config/nav-config';
 
+// Stub for KBar component - just returns navGroups as-is
+export const useFilteredNavGroups = (groups: any) => {
+  return groups;
+};
+
 const useNav = () => {
   const pathname = usePathname();
   const router = useRouter();
@@ -13,8 +18,8 @@ const useNav = () => {
   }, [pathname]);
 
   const activeNav = useMemo(() => {
-    const allItems = navGroups.flatMap((group) => group.items);
-    const activeItem = allItems.find((item) => pathname === item.url);
+    const allItems = navGroups.flatMap((group: any) => group.items);
+    const activeItem = allItems.find((item: any) => pathname === item.url);
     return activeItem || allItems[0];
   }, [pathname]);
 
@@ -39,11 +44,6 @@ const useNav = () => {
     hasPermission: () => true,
     hasPlan: () => true,
   };
-};
-
-// Stub for KBar component - just returns navGroups as-is
-export const useFilteredNavGroups = (groups: any) => {
-  return groups;
 };
 
 export default useNav;
