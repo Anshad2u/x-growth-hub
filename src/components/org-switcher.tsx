@@ -14,12 +14,12 @@ import {
 export function OrgSwitcher() {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" className="w-[200px] justify-between">
-          <span className="truncate">X Growth Hub</span>
-        </Button>
+      <DropdownMenuTrigger
+        render={<Button variant='outline' className='w-[200px] justify-between' />}
+      >
+        <span className='truncate'>X Growth Hub</span>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-[200px]" align="start">
+      <DropdownMenuContent className='w-[200px]' align='start'>
         <DropdownMenuLabel>Organization</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
