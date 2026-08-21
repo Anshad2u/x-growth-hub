@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { IconArrowRight, IconChartBar, IconUsers, IconSearch, IconTarget, IconTrendingUp } from '@tabler/icons-react';
+import { IconArrowRight, IconCalendar, IconClock, IconChartBar, IconUsers, IconSearch, IconTarget, IconTrendingUp } from '@tabler/icons-react';
 
 export default function Home() {
   return (
@@ -18,17 +18,11 @@ export default function Home() {
         </div>
 
         {/* Quick Actions */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
           <Link href="/analyze">
             <Button size="lg" className="w-full h-24 flex-col gap-2">
               <IconSearch className="w-6 h-6" />
               Analyze Profile
-            </Button>
-          </Link>
-          <Link href="/analyze">
-            <Button size="lg" variant="outline" className="w-full h-24 flex-col gap-2">
-              <IconChartBar className="w-6 h-6" />
-              Score Tweets
             </Button>
           </Link>
           <Link href="/compare">
@@ -41,6 +35,24 @@ export default function Home() {
             <Button size="lg" variant="outline" className="w-full h-24 flex-col gap-2">
               <IconTarget className="w-6 h-6" />
               My Account Audit
+            </Button>
+          </Link>
+          <Link href="/tools/calendar">
+            <Button size="lg" variant="outline" className="w-full h-24 flex-col gap-2">
+              <IconCalendar className="w-6 h-6" />
+              Content Calendar
+            </Button>
+          </Link>
+          <Link href="/tools/best-time">
+            <Button size="lg" variant="outline" className="w-full h-24 flex-col gap-2">
+              <IconClock className="w-6 h-6" />
+              Best Time to Post
+            </Button>
+          </Link>
+          <Link href="/tools/patterns">
+            <Button size="lg" variant="outline" className="w-full h-24 flex-col gap-2">
+              <IconTrendingUp className="w-6 h-6" />
+              Pattern Recognition
             </Button>
           </Link>
         </div>
