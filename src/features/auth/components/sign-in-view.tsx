@@ -2,9 +2,11 @@ export { GithubAuthButton, InteractiveGrid, UserAuthForm } from './github-auth-b
 
 export default function SignInView() {
   return (
-    <div>
-      <h1>Sign In</h1>
-      <p>Use GitHub authentication to sign in.</p>
+    <div className='container mx-auto py-10 text-center'>
+      <h1 className='text-2xl font-bold'>Sign In</h1>
+      <p className='text-muted-foreground mt-2'>
+        Authentication is disabled in this self-hosted deployment — all tools are open access.
+      </p>
     </div>
   );
 }
